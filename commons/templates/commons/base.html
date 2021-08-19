@@ -1,0 +1,179 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>망고플랜트s</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+  <link rel="stylesheet" href="{% static 'commons/css/base.css' %}">
+  <style>
+      .plant-avatar {
+          width: 80px;
+          height: 80px;
+          border-radius: 50%;
+          background-size: cover;
+          background-repeat: no-repeat;
+          background-position: center center;
+          margin-top: 10px;
+          margin-bottom: 10px;
+          margin-right: 10px;
+      }
+
+      .plant-avatar-1 {
+          background-image: url("{% static 'commons/image/a.jpeg' %}");
+      }
+
+      .plant-avatar-2 {
+          background-image: url("{% static 'commons/image/b.jpeg' %}");
+      }
+
+      .plant-avatar-3 {
+          background-image: url("{% static 'commons/image/c.jpeg' %}");
+      }
+
+      .plant-avatar-4 {
+          background-image: url("{% static 'commons/image/d.png' %}");
+      }
+
+      .plant-avatar-4 {
+          background-image: url("{% static 'commons/image/d.png' %}");
+      }
+
+      .plant {
+          text-align: center;
+      }
+
+      ul {
+          white-space: nowrap;
+          overflow-x: auto;
+          text-align: center;
+          list-style: none;
+      }
+
+      ul li {
+          display: inline-block;
+          margin-right: 10px;
+      }
+
+      .container {
+          padding-left: 20px;
+          padding-right: 20px;
+          padding-bottom: 20px;
+      }
+
+      .row {
+          margin: 0;
+      }
+
+      .card-image {
+          height: 180px;
+          background-size: cover;
+          background-position: center center;
+          border-radius: 20px;
+          margin-bottom: 5px;
+      }
+
+      .story-item h6 {
+          margin: 0;
+          font-size: 15px;
+      }
+
+      .story-item p {
+          font-size: 12px;
+      }
+
+      .story-item {
+          margin-bottom: 20px;
+          padding-left: 6px;
+          padding-right: 6px;
+      }
+  </style>
+</head>
+<body>
+<nav class="navbar navbar-expand-md navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#"><h1>망고 플랜트s</h1></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a class="nav-link active" href="index.html">Home</a>
+        <a class="nav-link" href="page1.html">식물도감</a>
+        <a class="nav-link" href="page2.html">내 식물</a>
+        <a class="nav-link" href="page3.html">식물일기</a>
+      </div>
+    </div>
+  </div>
+</nav>
+<div class="container">
+  <h3>My plants</h3>
+  <div class="row">
+    <ul>
+      <li>
+        <div class="plant">
+          <div class="plant-avatar plant-avatar-1"></div>
+          <p>지카라</p>
+        </div>
+      </li>
+      <li>
+        <div class="plant">
+          <div class="plant-avatar plant-avatar-2"></div>
+          <p>또치</p>
+        </div>
+      </li>
+      <li>
+        <div class="plant">
+          <div class="plant-avatar plant-avatar-3"></div>
+          <p>둘리</p>
+        </div>
+      </li>
+      <li>
+        <div class="plant">
+          <div class="plant-avatar plant-avatar-4"></div>
+          <p>도우너</p>
+        </div>
+      </li>
+      <li>
+        <div class="plant">
+          <div class="plant-avatar plant-avatar-4"></div>
+          <p>나비</p>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <h3>My Story</h3>
+  <div class="row">
+    <div class="col-6 story-item">
+      <div class="card-image" style="background-image: url('{% static 'commons/image/sample1.jpeg' %}');"></div>
+      <h6>첫번째 식물</h6>
+      <p class="card-text">Some quick example...</p>
+    </div>
+    <div class="col-6 story-item">
+      <div class="card-image" style="background-image: url('{% static 'commons/image/sample2.jpeg' %}');"></div>
+      <h6>첫번째 식물</h6>
+      <p class="card-text">Some quick example...</p>
+    </div>
+    <div class="col-6 story-item">
+      <div class="card-image" style="background-image: url('{% static 'commons/image/sample3.jpeg' %}');"></div>
+      <h6>첫번째 식물</h6>
+      <p class="card-text">Some quick example...</p>
+    </div>
+    <div class="col-6 story-item">
+      <div class="card-image" style="background-image: url('{% static 'commons/image/sample4.jpeg' %}');"></div>
+      <h6>첫번째 식물</h6>
+      <p class="card-text">Some quick example...</p>
+    </div>
+  </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
+        crossorigin="anonymous"></script>
+</body>
+</html>
+

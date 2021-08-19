@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap');
+@font-face {
+  src: url("../font/BMJUA_otf.otf");
+  font-family: jua;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: 'Nanum Gothic', sans-serif;
+}
+.container {
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 20px;
+}
+
+h1 {
+  font-family: jua, sans-serif;
+}
+
+h3 {
+  margin-top: 10px;
+  margin-bottom: 20px;
+  font-family: jua, sans-serif;
+}
+
+.navbar .nav-link {
+  font-family: jua, sans-serif;
+}
