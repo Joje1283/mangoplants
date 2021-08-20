@@ -4,4 +4,4 @@ from .models import Plant
 
 @admin.register(Plant)
 class PlantAdmin(admin.ModelAdmin):
-    pass
+    list_display = ['name', 'user', 'updated_at', 'created_at']
