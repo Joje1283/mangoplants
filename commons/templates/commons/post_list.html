@@ -1,0 +1,57 @@
+{% extends 'commons/base.html' %}
+{% load static %}
+{% block css %}
+  <style>
+      .story-image {
+          height: 300px;
+          background-size: cover;
+          background-position: center center;
+          border-radius: 20px;
+          margin-bottom: 10px;
+          background-color: red;
+      }
+
+      .story {
+          padding-left: 15px;
+          padding-right: 15px;
+          margin-bottom: 20px;
+      }
+
+      .content {
+          font-size: 15px;
+          font-family: 'Nanum Gothic', sans-serif;
+      }
+
+      .icon-container {
+          padding-left: 10px;
+          margin-bottom: 10px;
+      }
+
+      .icon-container a {
+          text-decoration: none;
+          color: black;
+      }
+  </style>
+{% endblock css %}
+{% block container %}
+  <h3>My plant Story</h3>
+  <div class="row">
+    <div class="col-12 story">
+      <div class="story-image" style="background-image: url('{% static 'commons/image/sample1.jpeg' %}');"></div>
+      <div class="icon-container"><a href="#"><i class="fas fa-comments fa-2x"></i></a> <a href="#"><i
+        class="fas fa-heart fa-2x"></i></a></div>
+      <div class="content">안녕하세요. 이것은 온르부터 키우기 시작한거에요.<br>앞으로도 이뻐해주세요</div>
+      <div>ㄴ 여봉봉: 하하하하</div>
+      <div>ㄴ 식이: 헤헤헤헤</div>
+    </div>
+    <div class="col-12 story">
+      <div class="story-image" style="background-image: url('{% static 'commons/image/sample2.jpeg' %}');"></div>
+      <div class="icon-container"><a href="#"><i class="fas fa-comments fa-2x"></i></a> <a href="#"><i
+        class="fas fa-heart fa-2x"></i></a></div>
+      <div class="content">안녕하세요. 이것은 온르부터 키우기 시작한거에요.<br>앞으로도 이뻐해주세요</div>
+      <div>ㄴ 여봉봉: 하하하하</div>
+      <div>ㄴ 식이: 헤헤헤헤</div>
+    </div>
+  </div>
+{% endblock container %}
+

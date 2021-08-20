@@ -1,0 +1,127 @@
+{% extends 'commons/base.html' %}
+{% load static %}
+{% block css %}
+  <style>
+      .plant-avatar {
+          width: 80px;
+          height: 80px;
+          border-radius: 50%;
+          background-size: cover;
+          background-repeat: no-repeat;
+          background-position: center center;
+          margin-top: 10px;
+          margin-bottom: 10px;
+          margin-right: 10px;
+      }
+
+      .plant {
+          text-align: center;
+      }
+
+      ul {
+          white-space: nowrap;
+          overflow-x: auto;
+          text-align: center;
+          list-style: none;
+      }
+
+      ul li {
+          display: inline-block;
+          margin-right: 10px;
+      }
+
+      .container {
+          padding-left: 20px;
+          padding-right: 20px;
+          padding-bottom: 20px;
+      }
+
+      .row {
+          margin: 0;
+      }
+
+      .card-image {
+          height: 180px;
+          background-size: cover;
+          background-position: center center;
+          border-radius: 20px;
+          margin-bottom: 5px;
+      }
+
+      .story-item h6 {
+          margin: 0;
+          font-size: 15px;
+      }
+
+      .story-item p {
+          font-size: 12px;
+      }
+
+      .story-item {
+          margin-bottom: 20px;
+          padding-left: 6px;
+          padding-right: 6px;
+      }
+  </style>
+{% endblock css %}
+{% block container %}
+  <h3>My plants</h3>
+  <div class="row">
+    <ul>
+      <li>
+        <div class="plant">
+          <div class="plant-avatar" style="background-image: url('{% static 'commons/image/a.jpeg' %}');"></div>
+          <p>지카라</p>
+        </div>
+      </li>
+      <li>
+        <div class="plant">
+          <div class="plant-avatar" style="background-image: url('{% static 'commons/image/b.jpeg' %}');"></div>
+          <p>또치</p>
+        </div>
+      </li>
+      <li>
+        <div class="plant">
+          <div class="plant-avatar" style="background-image: url('{% static 'commons/image/c.jpeg' %}');"></div>
+          <p>둘리</p>
+        </div>
+      </li>
+      <li>
+        <div class="plant">
+          <div class="plant-avatar" style="background-image: url('{% static 'commons/image/d.png' %}');"></div>
+          <p>도우너</p>
+        </div>
+      </li>
+      <li>
+        <div class="plant">
+          <div class="plant-avatar" style="background-image: url('{% static 'commons/image/d.png' %}');"></div>
+          <p>나비</p>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <h3>My Story</h3>
+  <div class="row">
+    <div class="col-6 story-item">
+      <div class="card-image" style="background-image: url('{% static 'commons/image/sample1.jpeg' %}');"></div>
+      <h6>첫번째 식물</h6>
+      <p class="card-text">Some quick example...</p>
+    </div>
+    <div class="col-6 story-item">
+      <div class="card-image" style="background-image: url('{% static 'commons/image/sample2.jpeg' %}');"></div>
+      <h6>첫번째 식물</h6>
+      <p class="card-text">Some quick example...</p>
+    </div>
+    <div class="col-6 story-item">
+      <div class="card-image" style="background-image: url('{% static 'commons/image/sample3.jpeg' %}');"></div>
+      <h6>첫번째 식물</h6>
+      <p class="card-text">Some quick example...</p>
+    </div>
+    <div class="col-6 story-item">
+      <div class="card-image" style="background-image: url('{% static 'commons/image/sample4.jpeg' %}');"></div>
+      <h6>첫번째 식물</h6>
+      <p class="card-text">Some quick example...</p>
+    </div>
+  </div>
+{% endblock container %}
+
