@@ -36,22 +36,16 @@
 {% block container %}
   <h3>My plant Story</h3>
   <div class="row">
+  {% for post in post_qs %}
     <div class="col-12 story">
-      <div class="story-image" style="background-image: url('{% static 'commons/image/sample1.jpeg' %}');"></div>
+      <div class="story-image" style="background-image: url('{% get_media_prefix %}{{ post.photo }}');"></div>
       <div class="icon-container"><a href="#"><i class="fas fa-comments fa-2x"></i></a> <a href="#"><i
         class="fas fa-heart fa-2x"></i></a></div>
-      <div class="content">안녕하세요. 이것은 온르부터 키우기 시작한거에요.<br>앞으로도 이뻐해주세요</div>
-      <div>ㄴ 여봉봉: 하하하하</div>
-      <div>ㄴ 식이: 헤헤헤헤</div>
+      <div class="content">{{ post.content|linebreaks }}</div>
+      <div>ㄴ 댓글맨1: 기능 추가 예정</div>
+      <div>ㄴ 댓글맨2: 이렇게 나오면 되나?</div>
     </div>
-    <div class="col-12 story">
-      <div class="story-image" style="background-image: url('{% static 'commons/image/sample2.jpeg' %}');"></div>
-      <div class="icon-container"><a href="#"><i class="fas fa-comments fa-2x"></i></a> <a href="#"><i
-        class="fas fa-heart fa-2x"></i></a></div>
-      <div class="content">안녕하세요. 이것은 온르부터 키우기 시작한거에요.<br>앞으로도 이뻐해주세요</div>
-      <div>ㄴ 여봉봉: 하하하하</div>
-      <div>ㄴ 식이: 헤헤헤헤</div>
-    </div>
+  {% endfor %}
   </div>
 {% endblock container %}
 
