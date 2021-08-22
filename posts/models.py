@@ -1,14 +1,17 @@
 from django.db import models
 from django.conf import settings
 
+from commons.utils import uuid_name_upload_to
+
 
 class Post(models.Model):
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     plant = models.ForeignKey('plants.Plant', on_delete=models.CASCADE)
     title = models.CharField(max_length=100)
-    content = models.TextField()
+    photo = models.ImageField(upload_to=uuid_name_upload_to)
+    content = models.CharField(max_length=200)
     created_at = models.DateField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
     def __str__(self):
-        return self.title
+        return self.content
