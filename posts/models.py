@@ -7,7 +7,6 @@ from commons.utils import uuid_name_upload_to
 class Post(models.Model):
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
     plant = models.ForeignKey('plants.Plant', on_delete=models.CASCADE)
-    title = models.CharField(max_length=100)
     photo = models.ImageField(upload_to=uuid_name_upload_to)
     content = models.CharField(max_length=200)
     created_at = models.DateField(auto_now_add=True)
