@@ -246,5 +246,4 @@ cython_debug/
 .python-version
 settings-dev.py
 
-static
 media

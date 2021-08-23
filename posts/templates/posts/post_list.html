@@ -1,37 +1,7 @@
 {% extends 'commons/base.html' %}
 {% load static %}
 {% block css %}
-  <style>
-      .story-image {
-          height: 300px;
-          background-size: cover;
-          background-position: center center;
-          border-radius: 20px;
-          margin-bottom: 10px;
-          background-color: red;
-      }
-
-      .story {
-          padding-left: 15px;
-          padding-right: 15px;
-          margin-bottom: 20px;
-      }
-
-      .content {
-          font-size: 15px;
-          font-family: 'Nanum Gothic', sans-serif;
-      }
-
-      .icon-container {
-          padding-left: 10px;
-          margin-bottom: 10px;
-      }
-
-      .icon-container a {
-          text-decoration: none;
-          color: black;
-      }
-  </style>
+  <link rel="stylesheet" href="{% static 'posts/css/post_list.css' %}">
 {% endblock css %}
 {% block container %}
   <h3>My plant Story</h3>
