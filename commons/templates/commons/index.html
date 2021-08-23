@@ -68,60 +68,25 @@
   <h3>My plants</h3>
   <div class="row">
     <ul>
-      <li>
+      {% for plant in plants %}
+        <li>
         <div class="plant">
-          <div class="plant-avatar" style="background-image: url('{% static 'commons/image/a.jpeg' %}');"></div>
-          <p>지카라</p>
+          <div class="plant-avatar" style="background-image: url('{% get_media_prefix %}{{ plant.photo }}');"></div>
+          <p>{{ plant.name }}</p>
         </div>
       </li>
-      <li>
-        <div class="plant">
-          <div class="plant-avatar" style="background-image: url('{% static 'commons/image/b.jpeg' %}');"></div>
-          <p>또치</p>
-        </div>
-      </li>
-      <li>
-        <div class="plant">
-          <div class="plant-avatar" style="background-image: url('{% static 'commons/image/c.jpeg' %}');"></div>
-          <p>둘리</p>
-        </div>
-      </li>
-      <li>
-        <div class="plant">
-          <div class="plant-avatar" style="background-image: url('{% static 'commons/image/d.png' %}');"></div>
-          <p>도우너</p>
-        </div>
-      </li>
-      <li>
-        <div class="plant">
-          <div class="plant-avatar" style="background-image: url('{% static 'commons/image/d.png' %}');"></div>
-          <p>나비</p>
-        </div>
-      </li>
+      {% endfor %}
     </ul>
   </div>
   <h3>My Story</h3>
   <div class="row">
-    <div class="col-6 story-item">
-      <div class="card-image" style="background-image: url('{% static 'commons/image/sample1.jpeg' %}');"></div>
-      <h6>첫번째 식물</h6>
-      <p class="card-text">Some quick example...</p>
+    {% for post in posts %}
+      <div class="col-6 story-item">
+      <div class="card-image" style="background-image: url('{% get_media_prefix %}{{ post.photo }}');"></div>
+      <h6>{{ post.plant.name }}</h6>
+      <p class="card-text">{{ post.content|truncatechars:15 }}</p>
     </div>
-    <div class="col-6 story-item">
-      <div class="card-image" style="background-image: url('{% static 'commons/image/sample2.jpeg' %}');"></div>
-      <h6>첫번째 식물</h6>
-      <p class="card-text">Some quick example...</p>
-    </div>
-    <div class="col-6 story-item">
-      <div class="card-image" style="background-image: url('{% static 'commons/image/sample3.jpeg' %}');"></div>
-      <h6>첫번째 식물</h6>
-      <p class="card-text">Some quick example...</p>
-    </div>
-    <div class="col-6 story-item">
-      <div class="card-image" style="background-image: url('{% static 'commons/image/sample4.jpeg' %}');"></div>
-      <h6>첫번째 식물</h6>
-      <p class="card-text">Some quick example...</p>
-    </div>
+    {% endfor %}
   </div>
 {% endblock container %}
 
