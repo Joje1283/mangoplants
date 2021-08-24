@@ -247,3 +247,4 @@ cython_debug/
 settings-dev.py
 
 media
+config.json
