@@ -245,5 +245,6 @@ cython_debug/
 
 .python-version
 settings-dev.py
+settings-prod.py
 
 media
