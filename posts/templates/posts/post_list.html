@@ -4,18 +4,28 @@
   <link rel="stylesheet" href="{% static 'posts/css/post_list.css' %}" type="text/css">
 {% endblock css %}
 {% block container %}
-  <h3>My plant Story</h3>
-  <div class="row">
-  {% for post in post_qs %}
-    <div class="col-12 story">
-      <div class="story-image" style="background-image: url('{% get_media_prefix %}{{ post.photo }}');"></div>
-      <div class="icon-container"><a href="#"><i class="fas fa-comments fa-2x"></i></a> <a href="#"><i
-        class="fas fa-heart fa-2x"></i></a></div>
-      <div class="content">{{ post.content|linebreaks }}</div>
-      <div>ㄴ 댓글맨1: 기능 추가 예정</div>
-      <div>ㄴ 댓글맨2: 이렇게 나오면 되나?</div>
+  <div class="container">
+    <h3>My plant Story</h3>
+    <div class="row">
+      {% for post in post_qs %}
+        <div class="col-12 story">
+          <a href="{% url 'posts:post' post.id %}">
+          <div class="story-image" style="background-image: url('{% get_media_prefix %}{{ post.photo }}');"></div>
+          </a>
+          <div class="icon-container">
+            <a href="#">
+              <img src="{% static 'commons/icon/chat.svg' %}" alt="" style="width: 20px;">
+            </a>1
+            <a href="#">
+              <img src="{% static 'commons/icon/heart.svg' %}" alt="" style="width: 20px;">
+            </a>2
+          </div>
+          <div class="content">{{ post.content|linebreaks }}</div>
+          <div>ㄴ 댓글맨1: 기능 추가 예정1</div>
+          <div>ㄴ 댓글맨2: 기능 추가 예정2</div>
+        </div>
+      {% endfor %}
     </div>
-  {% endfor %}
   </div>
 {% endblock container %}
 

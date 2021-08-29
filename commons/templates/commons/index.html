@@ -4,6 +4,7 @@
   <link rel="stylesheet" href="{% static 'commons/css/index.css' %}" type="text/css">
 {% endblock css %}
 {% block container %}
+  <div class="container">
   <h3>My plants</h3>
   <div class="row">
     <ul>
@@ -26,6 +27,7 @@
       <p class="card-text">{{ post.content|truncatechars:15 }}</p>
     </div>
     {% endfor %}
+  </div>
   </div>
 {% endblock container %}
 

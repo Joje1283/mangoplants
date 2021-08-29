@@ -1,0 +1,75 @@
+{% extends "commons/base.html" %}
+{% load static %}
+{% block css %}
+  <style>
+      .post-photo {
+          float: left;
+          background-color: aqua;
+          padding-bottom: 100%;
+          width: 100%;
+          height: 100%;
+          margin-bottom: 15px;
+          background-size: cover;
+          background-repeat: no-repeat;
+          background-position: center center;
+      }
+
+      .plant-photo {
+          width: 20%;
+          height: 20%;
+          padding-bottom: 20%;
+          background-color: bisque;
+          border-radius: 100%;
+          margin-bottom: 15px;
+          background-size: cover;
+          background-repeat: no-repeat;
+          background-position: center center;
+      }
+
+      .icon-container a {
+          text-decoration: none;
+          color: black;
+          margin-right: 10px;
+      }
+
+      .form-control:focus {
+        outline: none;
+        box-shadow: none;
+      }
+  </style>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+        integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+{% endblock %}
+{% block container %}
+  <div class="container-fluid">
+    <div class="row">
+      <div class="post-photo" style="background-image: url('{% get_media_prefix %}{{ post.photo }}');"></div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <div class="plant-photo float-start" style="background-image: url('{% get_media_prefix %}{{ post.plant.photo }}');"></div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <div class="icon-container">
+          <a href="#"><i class="far fa-heart fa-lg"></i></a>1
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12" style="margin-bottom: 10px;">
+        {{ post.content }}
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+      <form class="" style="border: 1px solid gray; border-radius: 20px;">
+          <label for="comment" class="visually-hidden">comment</label>
+          <input type="text" class="form-control" id="comment" placeholder="댓글 입력" style="width: 80%; display: inline-block; border: none; border-radius: 20px;">
+          <button type="submit" class="" style="border: none; background-color: rgba( 255, 255, 255, 0 );">Send</button>
+      </form>
+      </div>
+    </div>
+  </div>
+{% endblock container %}
