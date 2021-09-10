@@ -10,21 +10,43 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
+import os
 from pathlib import Path
+from django.core.exceptions import ImproperlyConfigured
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-BASE_DIR = Path(__file__).resolve().parent.parent
+BASE_DIR = Path(__file__).resolve().parent.parent.parent
+
+
+def get_env_variable(var_name):
+    """Get the environment variable or return exception."""
+    try:
+        return os.environ[var_name]
+    except KeyError:
+        error_msg = 'Set the {} environmentvariable'.format(var_name)
+        raise ImproperlyConfigured(error_msg)
+
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = ''
+DATABASES = {
+    "default": {
+      "ENGINE": "django.db.backends.mysql",
+      "NAME": get_env_variable('DATABASE_NAME'),
+      "USER": get_env_variable('DATABASE_USER'),
+      "PASSWORD": get_env_variable('DATABASE_PASSWORD'),
+      "HOST": get_env_variable('DATABASE_HOST'),
+    }
+  }
+
+SECRET_KEY = get_env_variable('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['.pythonanywhere.com']
+ALLOWED_HOSTS = []
 
 # Application definition
 
@@ -70,7 +92,6 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'mangoplants.wsgi.application'
-
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
