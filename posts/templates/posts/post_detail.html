@@ -42,18 +42,20 @@
 {% endblock %}
 {% block container %}
   <div class="container-fluid">
+    <div class="row" style="margin-top: 20px;">
+      <div class="col-10">
+        <div class="plant-photo float-start" style="background-image: url('{% get_media_prefix %}{{ post.plant.photo }}');"></div>
+      </div>
+    </div>
     <div class="row">
       <div class="post-photo" style="background-image: url('{% get_media_prefix %}{{ post.photo }}');"></div>
     </div>
     <div class="row">
       <div class="col-12">
-        <div class="plant-photo float-start" style="background-image: url('{% get_media_prefix %}{{ post.plant.photo }}');"></div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-12">
-        <div class="icon-container">
-          <a href="#"><i class="far fa-heart fa-lg"></i></a>1
+        <div class="icon-container" style="margin-bottom: 20px;">
+          <a href="#"><img src="{% static 'commons/icon/heart.svg' %}" style="width: 25px;"></a>
+          <a href="{% url 'posts:post_update' post.pk %}"><img src="{% static 'commons/icon/pencil-square.svg' %}" alt="" style="width: 25px;"></a>
+          <a href="#"><img src="{% static 'commons/icon/x-circle.svg' %}" alt="" style="width: 25px;"></a>
         </div>
       </div>
     </div>
