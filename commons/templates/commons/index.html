@@ -5,29 +5,33 @@
 {% endblock css %}
 {% block container %}
   <div class="container">
-  <h3>My plants</h3>
-  <div class="row">
-    <ul>
-      {% for plant in plants %}
-        <li>
-        <div class="plant">
-          <div class="plant-avatar" style="background-image: url('{% get_media_prefix %}{{ plant.photo }}');"></div>
-          <p>{{ plant.name }}</p>
-        </div>
-      </li>
-      {% endfor %}
-    </ul>
-  </div>
-  <h3>My Story</h3>
-  <div class="row">
-    {% for post in posts %}
-      <div class="col-6 story-item">
-      <div class="card-image" style="background-image: url('{% get_media_prefix %}{{ post.photo }}');"></div>
-      <h6>{{ post.plant.name }}</h6>
-      <p class="card-text">{{ post.content|truncatechars:15 }}</p>
+    <h3>My plants</h3>
+    <div class="row">
+      <ul>
+        {% for plant in plants %}
+          <li>
+            <div class="plant">
+              <div class="plant-avatar" style="background-image: url('{% get_media_prefix %}{{ plant.photo }}');"></div>
+              <p>{{ plant.name }}</p>
+            </div>
+          </li>
+        {% endfor %}
+      </ul>
     </div>
-    {% endfor %}
-  </div>
+    <h3>My Story</h3>
+    <div class="row">
+      {% for post in posts %}
+
+        <div class="col-6 story-item">
+          <a href="{% url 'posts:post_detail' post.pk %}">
+            <div class="card-image" style="background-image: url('{% get_media_prefix %}{{ post.photo }}');"></div>
+            <h6>{{ post.plant.name }}</h6>
+            <p class="card-text">{{ post.content|truncatechars:15 }}</p>
+          </a>
+        </div>
+
+      {% endfor %}
+    </div>
   </div>
 {% endblock container %}
 

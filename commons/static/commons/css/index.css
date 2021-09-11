@@ -58,3 +58,8 @@ ul li {
     padding-left: 6px;
     padding-right: 6px;
 }
+
+a {
+    text-decoration: none;
+    color: black;
+}
