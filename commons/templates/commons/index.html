@@ -10,10 +10,13 @@
       <ul>
         {% for plant in plants %}
           <li>
-            <div class="plant">
-              <div class="plant-avatar" style="background-image: url('{% get_media_prefix %}{{ plant.photo }}');"></div>
-              <p>{{ plant.name }}</p>
-            </div>
+            <a href="{% url 'plants:plant_list' %}">
+              <div class="plant">
+                <div class="plant-avatar"
+                     style="background-image: url('{% get_media_prefix %}{{ plant.photo }}');"></div>
+                <p>{{ plant.name }}</p>
+              </div>
+            </a>
           </li>
         {% endfor %}
       </ul>
