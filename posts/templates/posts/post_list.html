@@ -5,11 +5,18 @@
 {% endblock css %}
 {% block container %}
   <div class="container">
-    <h3>My plant Story</h3>
+    <div class="row">
+      <div class="col-10"><h3>My plant Story</h3></div>
+      <div class="col-2" style="line-height: 50px;">
+        <a href="{% url 'posts:post_create' %}" style="vertical-align: center">
+          <img src="{% static 'commons/icon/plus-circle-fill.svg' %}" style="width: 30px;">
+        </a>
+      </div>
+    </div>
     <div class="row">
       {% for post in post_qs %}
         <div class="col-12 story">
-          <a href="{% url 'posts:post' post.id %}">
+          <a href="{% url 'posts:post_detail' post.id %}">
           <div class="story-image" style="background-image: url('{% get_media_prefix %}{{ post.photo }}');"></div>
           </a>
           <div class="icon-container">
