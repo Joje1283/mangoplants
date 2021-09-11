@@ -55,7 +55,7 @@
         <div class="icon-container" style="margin-bottom: 20px;">
           <a href="#"><img src="{% static 'commons/icon/heart.svg' %}" style="width: 25px;"></a>
           <a href="{% url 'posts:post_update' post.pk %}"><img src="{% static 'commons/icon/pencil-square.svg' %}" alt="" style="width: 25px;"></a>
-          <a href="#"><img src="{% static 'commons/icon/x-circle.svg' %}" alt="" style="width: 25px;"></a>
+          <a href="{% url 'posts:post_delete' post.pk %}"><img src="{% static 'commons/icon/x-circle.svg' %}" alt="" style="width: 25px;"></a>
         </div>
       </div>
     </div>
