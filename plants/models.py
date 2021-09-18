@@ -9,6 +9,7 @@ class Plant(models.Model):
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, null=True, blank=True)
     name = models.CharField(max_length=20)
     photo = models.ImageField(upload_to=uuid_name_upload_to)
+    note = models.TextField(default='')
     last_water = models.DateField(null=True, blank=True)
     joined = models.DateField(null=True, blank=True)
     created_at = models.DateField(auto_now_add=True)
