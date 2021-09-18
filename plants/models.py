@@ -1,3 +1,4 @@
+from django.utils import timezone
 from django.db import models
 from django.conf import settings
 
@@ -15,3 +16,11 @@ class Plant(models.Model):
 
     def __str__(self):
         return self.name
+
+    @property
+    def passed_date(self):
+        now_date = timezone.now().date()
+        if not self.last_water:
+            return
+        return (now_date - self.last_water).days
+
