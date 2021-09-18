@@ -8,6 +8,10 @@ def plant_list(request):
     return render(request, 'plants/plant_list.html', {'plants': plants})
 
 
+def plant_detail(request, pk):
+    return render(request, 'plants/plant_detail.html', {'plant': Plant.objects.get(pk=pk)})
+
+
 def plant_create(request):
     if request.method == 'POST':
         plant_form = PlantForm(request.POST, request.FILES)

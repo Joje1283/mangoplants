@@ -1,0 +1,33 @@
+{% extends 'commons/base.html' %}
+{% load static %}
+{% block css %}
+  <style>
+      .plant-photo {
+          width: 50%;
+          height: 50%;
+          padding-bottom: 50%;
+          background-color: bisque;
+          border-radius: 100%;
+          background-size: cover;
+          background-repeat: no-repeat;
+          background-position: center center;
+          display: inline-block;
+
+      }
+  </style>
+{% endblock %}
+{% block container %}
+  <div class="container">
+    <div class="row mb-3">
+      <div class="col-10"><h3>My plant</h3></div>
+    </div>
+    <div class="row mb-2">
+      <div class="d-flex justify-content-center">
+        <div class="plant-photo" style="background-image: url('{% get_media_prefix %}{{ plant.photo }}');"></div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="text-center" style="font-size: 1.25em;">{{ plant }}</div>
+    </div>
+  </div>
+{% endblock %}
