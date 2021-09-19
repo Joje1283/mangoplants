@@ -25,3 +25,10 @@ class Plant(models.Model):
             return
         return (now_date - self.last_water).days
 
+    @property
+    def since_date(self):
+        now_date = timezone.now().date()
+        if not self.joined:
+            return
+        return (now_date - self.joined).days
+
