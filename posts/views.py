@@ -28,7 +28,7 @@ def post_update(request, pk):
     post = Post.objects.get(id=pk)
     if request.method == 'POST':
         # request.POST: 수정할 내용, instance인자: 수정 대상 지정
-        post_form = PostForm(request.POST, instance=post)
+        post_form = PostForm(request.POST, request.FILES, instance=post)
         if post_form.is_valid():
             post_form.save()
             return redirect('posts:post_detail', pk=post.id)

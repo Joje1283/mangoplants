@@ -23,6 +23,18 @@ def plant_create(request):
     return render(request, 'plants/plant_form.html', {'form': plant_form})
 
 
+def plant_update(request, pk):
+    plant = Plant.objects.get(pk=pk)
+    if request.method == 'POST':
+        plant_form = PlantForm(request.POST, request.FILES, instance=plant)
+        if plant_form.is_valid():
+            plant_form.save()
+            return redirect('plants:plant_detail', pk=plant.pk)
+    else:
+        plant_form = PlantForm(instance=plant)
+    return render(request, 'plants/plant_form.html', {'form': plant_form})
+
+
 def plant_delete(request, pk):
     if request.method == 'POST':
         plant = Plant.objects.get(pk=pk)

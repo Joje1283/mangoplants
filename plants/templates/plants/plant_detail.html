@@ -43,9 +43,9 @@
     <div class="row mb-2">
       <div class="col-12">
         <div class="icon-container d-flex flex-row-reverse" style="margin-bottom: 20px;">
-          <a href="#"><img src="{% static 'commons/icon/pencil-square.svg' %}"
+          <a href="{% url 'plants:plant_update' plant.pk %}"><img src="{% static 'commons/icon/pencil-square.svg' %}"
                                                                alt="" style="width: 25px;"></a>
-          <a href="#"><img src="{% static 'commons/icon/x-circle.svg' %}" alt=""
+          <a href="{% url 'plants:plant_delete' plant.pk %}"><img src="{% static 'commons/icon/x-circle.svg' %}" alt=""
                                                                style="width: 25px;"></a>
         </div>
       </div>
@@ -68,12 +68,12 @@
           <div class="card-body text-center" style="height: 250px; float: left">
             <br>
             <hr style="color: red;">
-            <br>
-            <p>노트를 이용하여 나만의 가드닝 정보를 기록해보세요</p>
-            <br>
             {% if plant.note %}
               {{ plant.note }}
             {% else %}
+              <br>
+              <p>노트를 이용하여 나만의 가드닝 정보를 기록해보세요</p>
+              <br>
               <button type="button" class="btn btn-outline-success">노트 작성하기</button>
             {% endif %}
           </div>
