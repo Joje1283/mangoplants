@@ -20,9 +20,12 @@
           border: none;
       }
 
-      .icon-container a {
+      a {
           text-decoration: none;
           color: black;
+      }
+
+      .icon-container a {
           margin-right: 10px;
       }
   </style>
@@ -30,7 +33,9 @@
 {% block container %}
   <div class="container">
     <div class="row mb-3">
-      <div class="col-10"><h3>My plant</h3></div>
+      <div class="col-10">
+        <a href="{% url 'plants:plant_list' %}"><h3>My plants</h3></a>
+      </div>
     </div>
     <div class="row mb-2">
       <div class="d-flex justify-content-center">
@@ -44,9 +49,9 @@
       <div class="col-12">
         <div class="icon-container d-flex flex-row-reverse" style="margin-bottom: 20px;">
           <a href="{% url 'plants:plant_update' plant.pk %}"><img src="{% static 'commons/icon/pencil-square.svg' %}"
-                                                               alt="" style="width: 25px;"></a>
+                                                                  alt="" style="width: 25px;"></a>
           <a href="{% url 'plants:plant_delete' plant.pk %}"><img src="{% static 'commons/icon/x-circle.svg' %}" alt=""
-                                                               style="width: 25px;"></a>
+                                                                  style="width: 25px;"></a>
         </div>
       </div>
     </div>
